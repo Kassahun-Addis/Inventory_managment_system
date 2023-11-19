@@ -1,0 +1,111 @@
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    ቅጽ 07 የሰራተኛው የባህሪ መመዘኛ መስፈርት ሰራተኛው በራሱ የሚሞላው
+                </div>
+                <div class="card-body">
+                    <table class="table bg-white">
+                        <thead class="bg-info text-white">
+                            <tr>
+                                <th scope="col" >የባህሪ ብቃት መለኪያዎች</th>
+                                <th scope="col" colspan="2">ክብደት</th>
+                                <th scope="col" rowspan="2">መለኪያ</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">ሰራተኛው ለራሱ የሰጠው ነጥብ </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>የመለኪያው ክብደት 4%</td>
+                                <td>የተሰጠው ነጥብ</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" style="text-align:center;"><strong>የግል ባህርያቶችን በተመለከተ</strong></td>
+                            </tr>
+                            <tr>
+                                <td>ፍትሃዊ አገልግሎት መስጠት </td>
+                                <td>0.4</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.4)"></td>
+                                <td>ሁል ጊዜ ተቆጥሮ የተሰጠውን ስራ ማእከል አድርጎ የሚሰራ መሆን</td>
+                            </tr> 
+                            <tr>
+                                <td>ተነሳሽነት </td>
+                                <td>0.6</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.6)"></td>
+                                <td>ሁል ጊዜ ስራወችን በራስ ተነሳሽነት የሚሰራ መሆን</td>
+                            </tr> 
+                            <tr>
+                                <td>ሚዛናዊነት </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1"></td>
+                                <td>ነገሮችን በማጤን በተረጋጋ ሁነታ ማየት የሚችል</td>
+                            </tr> 
+                            <tr>
+                                <td>ዉሳነ ሰቺነት </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.5)"></td>
+                                <td>ሁል ጊዜ ተገቢ የሆነና በለሎች ተቀባይነት ያለው ዉሳኔ መስጠት መቻሉ(ተጠባች በሆኑ መረጃወች ላይ ተመስርቶ ዉሳነ የመስጠት ብቃት)</td>
+                            </tr> 
+                            <tr>
+                                <td>ተገልጋዮችን መረዳት </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.5)"></td>
+                                <td>የተገልጋዩን ፍላጎት ከጊዜ፤ ከጥራትና ከዋጋ አንጻር የመረዳት ብቃቱ</td>
+                            </tr> 
+                            <tr>
+                                <td>ስነ-ምግባሩ </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.5)"></td>
+                                <td>የስራ ጊዘውን ለስራ ብቻ የማዋል ብቃቱ</td>
+                            </tr>  
+                            <tr>
+                                <td colspan="4" style="text-align:center;"><strong>ከክህሎት አንጻር</strong></td>
+                            </tr>
+                            <tr>
+                                <td>ስራን በጥራት የመስራት </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.5)"></td>
+                                <td>ሁል ጊዜ ጠንቃቃ የሆነና ስህተቶችን የማያዛባ</td>
+                            </tr> 
+                            <tr>
+                                <td>የስራ ትጋት </td>
+                                <td>0.5</td>
+                                <td><input type="number" name="input1" oninput="validateInput(this, 0, 0.5)"></td>
+                                <td>በሚሰራው ስራ ሁልጊዘ ትጉህ መሆኑ</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <button id="showSumButton">Show Sum</button>
+                    <p id="sumElement"></p>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('showSumButton').addEventListener('click', function() {
+        // Get all input elements
+        var inputElements = document.querySelectorAll('input[name="input1"]');
+
+        // Calculate the sum of input values
+        var sum = 0;
+        for (var i = 0; i < inputElements.length; i++) {
+            var inputValue = parseFloat(inputElements[i].value);
+            if (!isNaN(inputValue)) {
+                sum += inputValue;
+            }
+        }
+
+        // Display the sum
+        document.getElementById('sumElement').textContent = 'Sum: ' + sum;
+    });
+</script>

@@ -1,0 +1,26 @@
+{% extends 'partials/base.html'%}
+{% block title %} Logout page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+   <div class="container">
+        <div class="row mt-5">
+            <div class="COL-md-6 offset-md-3">
+                <div class="border bg-white p-3">
+                    <h3>Logout page</h3>
+                    <hr>
+                    <div class="alert alert-danger">
+                    <h4>You have loged out</h4>
+                    <!-- <form methd="POST"> 
+                        {% csrf_token %}
+                       {{ form | crispy }}
+                        <input class="btn btn-success"type="submit" value="LogiN">   
+
+                    </form>-->
+                   </div>
+                   <a href="{% url 'user-login' %}">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
